@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: lmorocho
+      changes:
+        - sql:
+            sql: CREATE SCHEMA ecommerce
+  - changeSet:
+      id: 2
+      author: lmorocho
+      changes:
+        - createTable:
+            tableName: producto
+            schemaName: ecommerce
+            columns:
+              - column:
+                  name: codigoproducto
+                  type: VARCHAR(50)
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_producto_codigoproducto
+              - column:
+                  name: nombre
+                  type: VARCHAR(200)
+              - column:
+                  name: descripcion
+                  type: VARCHAR(300)
+              - column:
+                  name: codsistema
+                  type: VARCHAR(10)
+              - column:
+                  name: habilitado
+                  type: BOOLEAN
