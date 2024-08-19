@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: changelog/iniciativas/iniciativa_1.yaml
+  - include:
+      file: changelog/iniciativas/iniciativa_2.yaml
