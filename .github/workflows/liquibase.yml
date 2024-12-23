@@ -17,6 +17,8 @@ jobs:
         with:
           tag: ${{ github.event.inputs.tag }}
           url: ${{ secrets.URL }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           headless: true
           defaultSchemaName: 'sqlschemadefaultliquibase'
           logLevel: 'INFO'
