@@ -18,5 +18,7 @@ jobs:
           changeLogFile: 'master-changelog.yaml'
           tag: ${{ github.event.inputs.tag }}
           url: ${{ secrets.URL }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           headless: true
           logLevel: 'INFO'
