@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Liquibase Action
     steps:
-      - uses: actions/checkout@v4{
+      - uses: actions/checkout@v4.2.2
       - uses: liquibase-github-actions/tag@4.30.0
         with:
           tag: ${{ github.event.inputs.tag }}

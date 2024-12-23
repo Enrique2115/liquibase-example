@@ -1,0 +1,22 @@
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Nombre del tag'
+        required: true
+        type: string
+
+
+jobs:
+  test-liquibase-action:
+    runs-on: ubuntu-latest
+    name: Test Liquibase Action
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: liquibase-github-actions/rollback@v4.30.0
+        with:
+          changeLogFile: 'master-changelog.yaml'
+          tag: ${{ github.event.inputs.tag }}
+          url: ${{ secrets.URL }}
+          headless: true
+          logLevel: 'INFO'
