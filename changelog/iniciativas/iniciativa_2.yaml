@@ -48,7 +48,7 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
                     nullable: false
-                    primaryKeyName: pk_producto_codigoproducto
+                    primaryKeyName: pk_producto_codigoproducto_2
               - column:
                   name: nombre
                   type: VARCHAR(200)
