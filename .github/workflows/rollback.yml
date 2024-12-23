@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v4.2.2
       - uses: liquibase-github-actions/rollback@v4.30.0
         with:
+          classpath: 'changelog'
           changeLogFile: 'master-changelog.yaml'
           tag: ${{ github.event.inputs.tag }}
           url: ${{ secrets.URL }}
