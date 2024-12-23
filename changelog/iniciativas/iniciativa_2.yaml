@@ -33,3 +33,31 @@ databaseChangeLog:
               - column:
                   name: habilitado
                   type: BOOLEAN
+  - changeSet:
+      id: 5
+      author: lmorocho
+      changes:
+        - createTable:
+            tableName: producto_2
+            schemaName: ecommerce_ms
+            columns:
+              - column:
+                  name: codigoproducto
+                  type: VARCHAR(50)
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    primaryKeyName: pk_producto_codigoproducto
+              - column:
+                  name: nombre
+                  type: VARCHAR(200)
+              - column:
+                  name: descripcion
+                  type: VARCHAR(300)
+              - column:
+                  name: codsistema
+                  type: VARCHAR(10)
+              - column:
+                  name: habilitado
+                  type: BOOLEAN
