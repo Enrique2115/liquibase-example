@@ -13,6 +13,14 @@ jobs:
     name: Test Liquibase Action
     steps:
       - uses: actions/checkout@v4.2.2
+      - uses: liquibase-github-actions/update@v4.29.1
+        with:
+          classpath: 'changelog'
+          changeLogFile: 'master-changelog.yaml'
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          url: ${{ secrets.URL }}
+          liquibaseSchemaName: 'sqlschemadefaultliquibase'
       - uses: liquibase-github-actions/tag@v4.30.0
         with:
           tag: ${{ github.event.inputs.tag }}
@@ -22,11 +30,3 @@ jobs:
           headless: true
           defaultSchemaName: 'sqlschemadefaultliquibase'
           logLevel: 'INFO'
-      - uses: liquibase-github-actions/update@v4.29.1
-        with:
-          classpath: 'changelog'
-          changeLogFile: 'master-changelog.yaml'
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          url: ${{ secrets.URL }}
-          liquibaseSchemaName: 'sqlschemadefaultliquibase'
