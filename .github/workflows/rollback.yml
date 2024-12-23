@@ -17,6 +17,7 @@ jobs:
         with:
           classpath: 'changelog'
           changeLogFile: 'master-changelog.yaml'
+          liquibaseSchemaName: 'sqlschemadefaultliquibase'
           tag: ${{ github.event.inputs.tag }}
           url: ${{ secrets.URL }}
           username: ${{ secrets.USERNAME }}
